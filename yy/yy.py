@@ -21,4 +21,9 @@ def getyymusic():
     url = 'https://data.3g.yy.com/mobyy/nav/dance/idx?bkt=0&channel=appstore&compAppid=yymip&hdid=c72e4faad15c429aac337a24c1585a311afb42b8&imei=c72e4faad15c429aac337a24c1585a311afb42b8&ispType=1&loadType=1&mac=c72e4faad15c429aac337a24c1585a311afb42b8&model=iPhone10%2C3&netType=2&os=iOS&osVersion=12.2&stype=2&uid=0&yyVersion=7.16.1&yyplugins=11%2C12%2C113%2C120'
     res = requests.get(url)
     resJson = res.json() 
-    print(resJson)_
+    data = resJson['data'][1]['data']
+    for i in range(len(data)):
+        print(data[i]['name'])
+
+if __name__ == '__main__':
+    getyymusic()
